@@ -18,7 +18,6 @@ jobs:
 
       - name: Install
         run: |
-          go mod init github.com/niubir/sing-box
           go mod tidy
 
       - name: Build Windows
