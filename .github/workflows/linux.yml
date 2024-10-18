@@ -34,45 +34,45 @@ jobs:
       - name: Build Darwin
         run: |
           CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build -o singbox ./cmd/sing-box
-          chmod +x sing-box
+          chmod +x singbox
           tar -czf singbox-darwin-amd64.tar.gz singbox
 
           CGO_ENABLED=0 GOOS=darwin GOARCH=arm64 go build -o singbox ./cmd/sing-box
-          chmod +x sing-box
+          chmod +x singbox
           tar -czf singbox-darwin-arm64.tar.gz singbox
 
       - name: Build Linux
         run: |
           CGO_ENABLED=0 GOOS=linux GOARCH=386 go build -o singbox ./cmd/sing-box
-          chmod +x sing-box
+          chmod +x singbox
           tar -czf singbox-linux-386.tar.gz singbox
 
           CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o singbox ./cmd/sing-box
-          chmod +x sing-box
+          chmod +x singbox
           tar -czf singbox-linux-amd64.tar.gz singbox
 
           CGO_ENABLED=0 GOOS=linux GOARCH=arm64 go build -o singbox ./cmd/sing-box
-          chmod +x sing-box
+          chmod +x singbox
           tar -czf singbox-linux-arm64.tar.gz singbox
 
           CGO_ENABLED=0 GOOS=linux GOARCH=arm GOARM=6 go build -o singbox ./cmd/sing-box
-          chmod +x sing-box
+          chmod +x singbox
           tar -czf singbox-linux-armv6.tar.gz singbox
 
           CGO_ENABLED=0 GOOS=linux GOARCH=arm GOARM=7 go build -o singbox ./cmd/sing-box
-          chmod +x sing-box
+          chmod +x singbox
           tar -czf singbox-linux-armv7.tar.gz singbox
 
           CGO_ENABLED=0 GOOS=linux GOARCH=mips64le go build -o singbox ./cmd/sing-box
-          chmod +x sing-box
+          chmod +x singbox
           tar -czf singbox-linux-mips64le.tar.gz singbox
 
           CGO_ENABLED=0 GOOS=linux GOARCH=riscv64 go build -o singbox ./cmd/sing-box
-          chmod +x sing-box
+          chmod +x singbox
           tar -czf singbox-linux-riscv64.tar.gz singbox
 
           CGO_ENABLED=0 GOOS=linux GOARCH=s390x go build -o singbox ./cmd/sing-box
-          chmod +x sing-box
+          chmod +x singbox
           tar -czf singbox-linux-s390x.tar.gz singbox
 
       - name: Release
