@@ -22,56 +22,56 @@ jobs:
 
       - name: Build Windows
         run: |
-          CGO_ENABLED=0 GOOS=windows GOARCH=386 go build -o singbox.exe ./cmd/sing-box
+          CGO_ENABLED=0 GOOS=windows GOARCH=386 go build --tags "with_quic with_grpc with_dhcp with_wireguard with_ech with_utls with_reality_server with_acme with_clash_api with_v2ray_api with_gvisor" -o singbox.exe ./cmd/sing-box
           zip singbox-windows-386.zip singbox.exe
 
-          CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -o singbox.exe ./cmd/sing-box
+          CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build --tags "with_quic with_grpc with_dhcp with_wireguard with_ech with_utls with_reality_server with_acme with_clash_api with_v2ray_api with_gvisor" -o singbox.exe ./cmd/sing-box
           zip singbox-windows-amd64.zip singbox.exe
 
-          CGO_ENABLED=0 GOOS=windows GOARCH=arm64 go build -o singbox.exe ./cmd/sing-box
+          CGO_ENABLED=0 GOOS=windows GOARCH=arm64 go build --tags "with_quic with_grpc with_dhcp with_wireguard with_ech with_utls with_reality_server with_acme with_clash_api with_v2ray_api with_gvisor" -o singbox.exe ./cmd/sing-box
           zip singbox-windows-arm64.zip singbox.exe
 
       - name: Build Darwin
         run: |
-          CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build -o singbox ./cmd/sing-box
+          CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build --tags "with_quic with_grpc with_dhcp with_wireguard with_ech with_utls with_reality_server with_acme with_clash_api with_v2ray_api with_gvisor" -o singbox ./cmd/sing-box
           chmod +x singbox
           tar -czf singbox-darwin-amd64.tar.gz singbox
 
-          CGO_ENABLED=0 GOOS=darwin GOARCH=arm64 go build -o singbox ./cmd/sing-box
+          CGO_ENABLED=0 GOOS=darwin GOARCH=arm64 go build --tags "with_quic with_grpc with_dhcp with_wireguard with_ech with_utls with_reality_server with_acme with_clash_api with_v2ray_api with_gvisor" -o singbox ./cmd/sing-box
           chmod +x singbox
           tar -czf singbox-darwin-arm64.tar.gz singbox
 
       - name: Build Linux
         run: |
-          CGO_ENABLED=0 GOOS=linux GOARCH=386 go build -o singbox ./cmd/sing-box
+          CGO_ENABLED=0 GOOS=linux GOARCH=386 go build --tags "with_quic with_grpc with_dhcp with_wireguard with_ech with_utls with_reality_server with_acme with_clash_api with_v2ray_api with_gvisor" -o singbox ./cmd/sing-box
           chmod +x singbox
           tar -czf singbox-linux-386.tar.gz singbox
 
-          CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o singbox ./cmd/sing-box
+          CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build --tags "with_quic with_grpc with_dhcp with_wireguard with_ech with_utls with_reality_server with_acme with_clash_api with_v2ray_api with_gvisor" -o singbox ./cmd/sing-box
           chmod +x singbox
           tar -czf singbox-linux-amd64.tar.gz singbox
 
-          CGO_ENABLED=0 GOOS=linux GOARCH=arm64 go build -o singbox ./cmd/sing-box
+          CGO_ENABLED=0 GOOS=linux GOARCH=arm64 go build --tags "with_quic with_grpc with_dhcp with_wireguard with_ech with_utls with_reality_server with_acme with_clash_api with_v2ray_api with_gvisor" -o singbox ./cmd/sing-box
           chmod +x singbox
           tar -czf singbox-linux-arm64.tar.gz singbox
 
-          CGO_ENABLED=0 GOOS=linux GOARCH=arm GOARM=6 go build -o singbox ./cmd/sing-box
+          CGO_ENABLED=0 GOOS=linux GOARCH=arm GOARM=6 go build --tags "with_quic with_grpc with_dhcp with_wireguard with_ech with_utls with_reality_server with_acme with_clash_api with_v2ray_api with_gvisor" -o singbox ./cmd/sing-box
           chmod +x singbox
           tar -czf singbox-linux-armv6.tar.gz singbox
 
-          CGO_ENABLED=0 GOOS=linux GOARCH=arm GOARM=7 go build -o singbox ./cmd/sing-box
+          CGO_ENABLED=0 GOOS=linux GOARCH=arm GOARM=7 go build --tags "with_quic with_grpc with_dhcp with_wireguard with_ech with_utls with_reality_server with_acme with_clash_api with_v2ray_api with_gvisor" -o singbox ./cmd/sing-box
           chmod +x singbox
           tar -czf singbox-linux-armv7.tar.gz singbox
 
-          CGO_ENABLED=0 GOOS=linux GOARCH=mips64le go build -o singbox ./cmd/sing-box
+          CGO_ENABLED=0 GOOS=linux GOARCH=mips64le go build --tags "with_quic with_grpc with_dhcp with_wireguard with_ech with_utls with_reality_server with_acme with_clash_api with_v2ray_api with_gvisor" -o singbox ./cmd/sing-box
           chmod +x singbox
           tar -czf singbox-linux-mips64le.tar.gz singbox
 
-          CGO_ENABLED=0 GOOS=linux GOARCH=riscv64 go build -o singbox ./cmd/sing-box
+          CGO_ENABLED=0 GOOS=linux GOARCH=riscv64 go build --tags "with_quic with_grpc with_dhcp with_wireguard with_ech with_utls with_reality_server with_acme with_clash_api with_v2ray_api with_gvisor" -o singbox ./cmd/sing-box
           chmod +x singbox
           tar -czf singbox-linux-riscv64.tar.gz singbox
 
-          CGO_ENABLED=0 GOOS=linux GOARCH=s390x go build -o singbox ./cmd/sing-box
+          CGO_ENABLED=0 GOOS=linux GOARCH=s390x go build --tags "with_quic with_grpc with_dhcp with_wireguard with_ech with_utls with_reality_server with_acme with_clash_api with_v2ray_api with_gvisor" -o singbox ./cmd/sing-box
           chmod +x singbox
           tar -czf singbox-linux-s390x.tar.gz singbox
 
